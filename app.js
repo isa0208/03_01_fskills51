@@ -13,15 +13,21 @@ var express = require('express');
 var app = express();
 
 app.set('view engine','ejs');
+
+app.use('/public', express.static('public')); //step 46 why in  between app.set and app.get
+
 app.get('/', function (_req, res){
     res.render("home");
     });
 
-
 app.get('/auckland', function (_req, res){
     res.render("auckland");
     });
-   
+
+app.get('/beaches', function (_req, res){
+    res.render("beaches");
+    });
+          
 
 //App listens into port 3000
 //Starts the server and makes it ready to handle HTTP requests
