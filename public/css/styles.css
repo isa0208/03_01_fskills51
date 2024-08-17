@@ -1,12 +1,10 @@
-p {
-    color:red;
-}
 h1{
     color:purple;
 }
 
 h2 {
     color:green;
+    font-size: medium;
 }
 
 h4 {
@@ -14,5 +12,12 @@ h4 {
 }
 
 p {
-    color:red;
+    color:#000000;
+}
+
+.img2 {
+    float:right;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
 }

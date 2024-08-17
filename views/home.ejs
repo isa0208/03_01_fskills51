@@ -1,10 +1,7 @@
-<!--- Seems to work like HTML-->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('partials/header1.ejs') %>
-<!---     <style>
+        <!---     <style>
             h4 {
                 color:blue;
             }
@@ -14,19 +11,29 @@
         </style> --->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%- include('partials/header1.ejs') %>
         <title>New Zealand Regions</title>
     </head>
     <body>
         <%- include('partials/navbar1.ejs') %>
-        <h1>This is the home page </h1>
-        <p>New Zealand is a beautiful country</p>
-        <h1> New Zealand</h1>
-        <h2> South Island</h2>
-        <h4>Christchurch</h4>
-        <h4>Dunedin</h4>
-        <h2>North Island</h2>
-        <a href="auckland">Auckland City</a>
-        <h4>Auckland</h4>
-        <h4>Wellington</h4>
+        <div class= "container">
+            <h2>New Zealand</h2>
+            <img class="img2" src="/public/images/bridalVeilFalls.jpg" alt="Bridal Veil Falls">
+            <p>New Zealand is a beautiful country</p>
+            <p><a href="auckland">Auckland</a> is the commercial hub of New Zealand</p>
+            <p style ="color:#23086f">
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+                Lorem ipsum dolor
+            </p>
+            </p>
+        </div>
     </body>
 </html>
