@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/header1.ejs') %>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <%- include('partials/navbar1.ejs') %>
+    <div>
+        <h1>Feedback</h1>
+        <br>
+        <form action= "/feedback" method="post">
+            <input type="text" name ="firstname" placeholder= "First Name" id= "firstname" required>
+            <input type="text" name ="lastname" placeholder= "Last Name" id= "lastname" required>
+            <select id="gender"  placeholder= "Gender" id= "gender" required>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer Not to Say</option>
+                </select>
+            <input type="email" name ="email" placeholder= "Email Address" id= "email" required>
+            <input type="email" name ="emailconfirm" placeholder= "Confirm Email" id= "confirmemail" required>
+            <input type="text" name ="feedback" placeholder= "Feedback" id= "feedback" required>
+            <input type="submit" value="Submit Feedback">
+        </form>
+        </br>
+    </div>
+</body>
+</html>
