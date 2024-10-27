@@ -39,7 +39,7 @@ app.get('/classpass', function (_req, res){
     res.render("classpass");
     });
 
-//Get List of Class Prices
+//List of Class Prices
 app.get('/prices', function(_req, res) {
 	var sql = 'SELECT * FROM prices';
 	conn.query(sql, function (err, result) {
@@ -61,7 +61,7 @@ app.get('/get-feedback', function(req, res) {
     });
 });
 
-//Login feature
+//LOGIN - Only Guests and Admins can access
 app.get('/login', function (_req, res){
     res.render("login");
     });
@@ -91,7 +91,7 @@ app.post('/auth', function(req, res) {
 		res.end();
 	}
 });
-//Guests and admin can only access if they are logged in
+//LOGIN - Only Guests and Admins can access
 app.get('/membersOnly', function (req, res) {
 	if (req.session.loggedin){
 		if(req.session.userrole === "guest"){
@@ -108,19 +108,77 @@ app.get('/membersOnly', function (req, res) {
 }
 );
 
-//Logout feature
+app.get('/calculator', function (_req, res){
+    res.render("calculator");
+    });
+app.get('/apply', function (_req, res){
+    res.render("apply");
+    });
+
+//ADMIN ONLY PAGES
+//Admin can delete free trial sign ups
+app.get('/adminOnly', function (_req, res){
+    res.render("adminOnly");
+    });
+
+app.get('/ftdisplay', function (_req, res){
+	res.render("ftdisplay");
+});
+app.get('/get-feedback', function(req, res) {
+    var sql = 'SELECT * FROM feedback';
+    conn.query(sql, function(err, results) {
+        if (err) throw err;
+        res.json(results); // Send the results as JSON
+    });
+});
+
+app.delete('/delete-feedback/:id', function(req, res) {
+    const id = req.params.id;
+    const sql = 'DELETE FROM feedback WHERE id = ?';
+    conn.query(sql, [id], function(err, result) {
+        if (err) {
+            res.json({ success: false, message: 'Error deleting sign up' });
+        } else {
+            res.json({ success: true, message: 'Sign up deleted successfully' });
+        }
+    });
+});
+
+//Admin can add free trial sign ups
+app.get('/addMPs', function (_req, res, next){
+    if (_req.session.loggedin) { 
+        res.render("addMPs");
+    }
+    else {
+        res.send('Please login to view this page');
+    }
+});
+
+app.post('/addMPs',function(req, res, next){
+    var id = req.body.id;
+    var name = req.body.name;
+    var party = req.body.party;
+    var sql ='INSERT INTO mps (id, name, party) VALUES ("${id}", "${name}", "${party}")';
+    conn.query(sql, function(err, result){
+        if (err) throw err;
+        console.log('record inserted');
+        res.render("addMPs");
+    });
+ });
+//END OF ADMIN ONLY
+
+//LOGOUT
 app.get('/logout',(req,res) => {
     req.session.destroy();
     res.redirect('/');
 });
       
-
 app.get('/teapot',(_req,res)=>{
     res.status(418).send("The requested entity body is short and stout. Tip me over and pour me out.")
 });
 
 
-//Register User
+//REGISTER USER
 app.get('/register', function (req, res){
 	res.render("register");
 });
@@ -139,8 +197,9 @@ app.post('/register', function(req, res) {
 		console.log("Error");
 	}
   });
+//END OF REGISTER USER
 
-
+//FREE TRIAL
 //Free trial form - to rename from feedback in DB
 app.get('/feedback2', function (_req, res){
     res.render("feedback2");
@@ -176,29 +235,7 @@ app.post('/submit-trial', function(req, res) {
 		res.render('/feedback2', { error: 'All fields are required, and emails must match.' }); // Render the form again with an error message
 	}
 });
-
-
-//Users can access this only if they are logged in
-app.get('/addMPs', function (_req, res, next){
-    if (_req.session.loggedin) { 
-        res.render("addMPs");
-    }
-    else {
-        res.send('Please login to view this page');
-    }
-});
-
-app.post('/addMPs',function(req, res, next){
-    var id = req.body.id;
-    var name = req.body.name;
-    var party = req.body.party;
-    var sql ='INSERT INTO mps (id, name, party) VALUES ("${id}", "${name}", "${party}")';
-    conn.query(sql, function(err, result){
-        if (err) throw err;
-        console.log('record inserted');
-        res.render("addMPs");
-    });
- });
+//END OF FREE TRIAL
 
 //App listens into port 3000
 //Starts the server and makes it ready to handle HTTP requests
