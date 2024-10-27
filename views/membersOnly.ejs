@@ -1,21 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('partials/header1.ejs') %>
-    <title>Members Only</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%- include('partials/header1.ejs') %>
+        <title>Members Only</title>
+    </head>
+    <body>
     <%- include('partials/navbar2.ejs') %>
-    <h2 style ="color:red">Members only page</h2>
-
-    <p style= "color:#00f">
-        Welcome to a Members only page. You are logged in.
-    </p>
-
-    <p style= "color:#7fae5d">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-</body>
+    <!--start of intro banner-->
+        <div id ="parallax" class= "container-fluid p-12 text-center">
+            <div class="banner">
+                <img class="img2" src="../public/images/muaythaifight.jpg" alt="Muay Thai Fight">
+            </div>
+            <div class="parallax-text left-align col-sm-4">
+                <h1>Welcome to the Sabai Community!</h1>
+                <h5>Master the Art of Eight Limbs!</h5>    
+                <br>
+                <p>Join our vibrant community and discover the powerful martial art of Muay Thai. 
+                Whether you're a complete beginner or an experienced fighter, 
+                there are classes in Thailand that cater to all levels. 
+                Train hard, build strength, and develop skills that will last a lifetime.</p>
+                <form action="/classes" method="GET" class="form-btn">
+                    <input type="submit" value="Learn more about classes">
+                </form>
+            </div>
+        </div>
+    <!--end of intro banner-->
+    <br>
+    <div id="introduction" class="container mt-5">
+        <div class="row">
+            <div class="col-sm-4">			
+                <h3 class="heading-color">Why Learn Muay Thai?</h3>			
+                <p>Muay Thai, known as the "Art of Eight Limbs," utilises fists, elbows, knees, and shins 
+                to create a dynamic and effective striking style<p>
+                <p>It also enhances your physical fitness, boosts your confidence, and improves your mental resilience</p>
+                <p>It is not just a sport that has many physical and mental health benefits.
+                It is a way of life</p>
+            </div>
+            <div class="col-sm-4">
+                <h3 class="heading-color">The 90-Day Muay Thai Visa</h3>
+                <p>The Muay Thai visa is designed for martial arts enthusiasts who want to immerse themselves 
+                in the authentic experience of training in Thailand</p>
+                <p>This specialised visa allows you to stay for an extended period, 
+                enabling you to train at reputable gyms, participate in local competitions, and fully embrace Thai culture.</p>
+                <p>Obtain your Muay Thai visa <a href="visa">here</a> and embark on your journey in the birthplace of this powerful martial art!</p>
+            </div>
+            <div class="col-sm-4">
+                <h3 class="heading-color">Train in the Heart of Thailand</h3> 
+                <p>From beginners to advanced fighters, classes are designed to foster skill development and camaraderie.</p>
+                <p> Whether it is personalised training with former Lumpinee champions or expert coaching, there is something for every fighter</p>
+                <p> Experience the vibrant community and range of <a href="classes">classes</a> that make training in Thailand truly special!</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="gallery" class="container mt-5">	
+        <div class="row">		
+            <h4 class="heading-color text-center">Muay Thai Moments</h4>
+            <p class="heading-text">Explore our vibrant gallery showcasing the energy and intensity of Muay Thai training. From powerful strikes in action to the camaraderie shared between fighters, these images capture the spirit of our community and the dedication of our athletes. </p>	
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                <img src="/public/images/muaythaifight.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Muay Thai Fight"/>
+                <img src="/public/images/muaythaifight.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Muay Thai Fight"/>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="/public/images/muaythaifight.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Muay Thai Fight"/>
+                <img src="/public/images/muaythaifight.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Muay Thai Fight"/>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="/public/images/muaythaifight.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Muay Thai Fight"/>
+                <img src="/public/images/muaythaifight.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Muay Thai Fight"/>
+            </div>
+        </div>			
+    </div>
+    </body>
+    <br>
+    <%- include('partials/footer.ejs') %>
 </html>

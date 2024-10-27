@@ -1,23 +1,151 @@
-h1{
-    color:purple;
-}
+:root {
+    --light-grey: #f5f6f7;
+    --dark-grey: #dde2e3;
+    --dark-blue: #0b0b44;
+    --light-yellow: #fecc4c;
+    --dark-yellow: #feac32;
+    --light-pink: #ffadad;
+    --dark-red: #850000;
+    --light-green: #acd157;
+    --dark-green: #008000;
+  }
 
-h2 {
-    color:green;
-    font-size: medium;
-}
+  /* General */
+  h1 {
+	color: var(--dark-blue);
+  }
+  h3 {
+    font-size: large;
+    color: var(--dark-green)
+  }
+  h4 {
+	color :var(--dark-red)
+  }
+  body {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: var(--dark-grey);
+    color: var(--dark-blue);
+  }
 
-h4 {
-    color:purple;
-}
+  p {
+    color:var(--dark-blue)
+  }
 
-p {
-    color:#000000;
-}
+/* Banner */
 
+#parallax {
+    min-height: 100px; 
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.8;
+}
 .img2 {
-    float:right;
-    width: 600px;
-    height: 600px;
-    object-fit: cover;
+	width: 80%;
+	height: 800px;
 }
+.parallax-text {
+	position: absolute;
+	top: 35%;
+	background: var(--dark-grey);
+	opacity: 0.9;
+	left: 6%;
+	padding: 50px;
+	text-align: left;
+}
+.container-fluid {
+	padding: 0px !important;
+}
+
+/* Navigation */
+
+.navbar-nav {
+	padding: 0px 10px;
+	margin-left:auto;
+}
+
+.navbar-nav ul {
+	border: none !important;
+}
+
+.navbar-nav a {
+	margin-right: 20px;
+	text-decoration: none;
+	color: var(--dark-blue);	
+	margin-top: 7px;
+}
+.navbar-nav a:hover {
+	color: var(--dark-grey);
+}
+/* Classes */
+#about-classes img {
+	text-align: center;
+	width: 80%;
+	height: 300px;
+}
+.sessions img {
+	max-width: 400px;
+}
+#book-now {
+  margin-top: 20px;
+}
+.sessions li {
+  list-style: disc;
+}
+@media only screen and (max-width: 575px) {
+  
+}
+
+/* Footer */
+.footer { 
+	position:fixed;
+	width: 100%;
+	height: auto;
+	bottom: 0px;
+	background: var(--light-grey);
+	color: white;
+}
+.footer .text-center {
+	color: var(--dark-green);
+	font-size: small;
+    padding-top: 0px;
+	padding-bottom: 10px;
+}
+
+/* Buttons */
+
+.form-btn input {
+	background: var(--dark-yellow);
+	color: var(--dark-blue);
+	padding: 8px 16px;
+	border-radius: 3px;
+}
+.form-btn input:hover {
+	background: var(--light-yellow);  
+	color: white;
+}
+
+.btn {
+	background: var(--dark-green);
+	color: var(--light-grey);
+	padding: 8px 16px;
+	border-radius: 3px;
+}
+.btn:hover {
+	background: var(--light-green);  
+	color: white;
+}
+.quiz-btn input {
+	background: var(--light-pink);
+	color: black;
+	padding: 8px 16px;
+	border-radius: 3px;
+}
+.quiz-btn input:hover {
+	background: var(--dark-grey);  
+	color: white;
+}
+
+/*Contact Form*/

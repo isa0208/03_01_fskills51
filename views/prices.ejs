@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/header1.ejs') %>
+    <title>Pricing Info</title>
+
+</head>
+<body>
+    <%- include('partials/navbar1.ejs') %>
+    <div class="container mt-5">			
+        <div class="heading2">
+            <h1>Class Prices</h1>			
+        </div>
+        <div id="divGet">
+            <table class="table table-striped" style="height: 400px;">
+                <tr>
+                    <th>Session ID</th>
+                    <th>Class Name</th>
+                    <th>Price</th>
+                    <th>Level</th>
+                    <th>Location</th>			
+                </tr>					
+            <%if (priceData && priceData.length >0) { %>
+                <%priceData.forEach( function(data) { %>
+                <tr>						
+                    <td><%=data.sessionId%></td>
+                    <td><%=data.className%></td>
+                    <td><%=data.price%></td>
+                    <td><%=data.level%></td>
+                    <td><%=data.location%></td>									                               
+                </tr>
+			<% }); %> 
+            <% } else { %>
+                <tr>
+                    <td colspan="5">No classes available.</td>
+                </tr>
+            <% } %>
+            </table>
+        </div>
+        <div id="book-now">									
+            <a class="btn" href="/login">
+                <span>New Booking</span>
+            </a>									
+        </div>
+    </div>
+</body>
+</html>

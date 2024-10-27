@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<%- include('partials/header1.ejs') %>
+		<title>Register</title>
+	</head>
+	<body>
+		<div class="container mt-5 lg-reg">	
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-12 mb-4 mb-lg-0" >
+					<h1>Register</h1>
+					<p>Register to find out more about the Muay Thai visa!</p>
+					<h6>Already have an account? Please <a href="login">login.</a></h6>
+					<form action="/register" method="post">
+						<input type="hidden" name="token" id="token" required>
+						<div class="form-group">					
+							<input type="text" name="username" placeholder="Username" id="username" required>							
+						</div>	
+						<div class="form-group">					
+							<input type="password" name="password" placeholder="Password" id="password" required>							
+						</div>
+						<div class="form-group">					
+							<input class="btn" type="submit" value="Register">							
+						</div>								
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+<%- include('partials/footer.ejs') %>
+</html>
