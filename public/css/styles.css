@@ -16,6 +16,7 @@
   }
   h3 {
     font-size: large;
+	text-decoration: underline;
     color: var(--dark-green)
   }
   h4 {
@@ -80,6 +81,18 @@
 .navbar-nav a:hover {
 	color: var(--dark-red);
 }
+
+.nav-item-login {
+	background: var(--light-green);
+	padding: 3px 4px 3px 4px;
+}
+.nav-item-login:hover {
+	background: var(--dark-grey);
+}
+
+.nav-item-login a {
+	text-align: right;
+}
 /* Classes */
 #about-classes img {
 	text-align: center;
@@ -98,6 +111,7 @@
 @media only screen and (max-width: 575px) {
   
 }
+
 
 /* Footer */
 .footer { 

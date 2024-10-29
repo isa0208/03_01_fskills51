@@ -1,0 +1,114 @@
+:root {
+    --light-grey: #f5f6f7;
+    --dark-grey: #dde2e3;
+    --dark-blue: #0b0b44;
+    --light-yellow: #fecc4c;
+    --dark-yellow: #feac32;
+    --light-pink: #ffadad;
+    --dark-red: #850000;
+    --light-green: #acd157;
+    --dark-green: #008000;
+  }
+  
+  body {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: var(--dark-grey);
+    color: var(--dark-blue);
+  }
+  /* Navigation */
+
+.navbar-nav {
+	padding: 0px 10px;
+	margin-left:auto;
+}
+
+.navbar-nav ul {
+	border: none !important;
+}
+
+.navbar-nav a {
+	margin-right: 20px;
+	text-decoration: none;
+	color: var(--dark-blue);	
+	margin-top: 7px;
+}
+.navbar-nav a:hover {
+	color: var(--dark-red);
+}
+
+
+.nav-item-login a {
+	text-align: right;
+}
+
+/*Calculator*/
+h1 {
+    text-align: center;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 680px;
+  }
+  
+  h1,
+  .container,
+  .output {
+    margin: 20px auto;
+  }
+  
+  label,
+  legend {
+    font-weight: bold;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--light-yellow);
+    border: 2px solid var(--dark-yellow);
+  }
+  
+  button,
+  input,
+  select {
+    min-height: 24px;
+    color: var(--dark-blue);
+  }
+  
+  fieldset,
+  label,
+  button,
+  input,
+  select {
+    margin-bottom: 10px;
+  }
+  
+  .output {
+    border: 2px solid var(--light-grey);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .output span {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .surplus {
+    color: var(--light-pink);
+  }
+  
+  .deficit {
+    color: var(--light-green);
+  }
